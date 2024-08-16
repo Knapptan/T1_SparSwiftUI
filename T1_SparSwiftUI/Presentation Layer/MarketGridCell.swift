@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct MarketGridCell: View {
-    var title: String
+    var product: Product
     
     var body: some View {
-        VStack {
-            Text(title)
-            HStack {
-                ProgressView()
-                    .padding(40)
-            }
+        let width: CGFloat = 168
+        let height : CGFloat = 278
+        
+        VStack (alignment: .center ,spacing: 4){
+            ImageGridOverlayView(product: product)
+                .padding(.top)
+            ProductInfoView(product: product)
+            // Нужно проверить размеры и выставить границы
+            PiecesKilogramsToggle()
+            KilogramsSetter()
+                .frame(width: 160, height: 36 )
+                .padding(.vertical, 2) // на глаз - переделать
         }
-        .frame(width: 140, height: 240)
+        .frame(width: width, height: height)
         .padding()
         .background(Color.white)
-        .cornerRadius(20)
+        .clipShape(
+            .rect(
+                topLeadingRadius: 16,
+                bottomLeadingRadius: 16,
+                bottomTrailingRadius: 20,
+                topTrailingRadius: 20
+            )
+        )
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
         .onAppear {
         }
@@ -31,5 +44,5 @@ struct MarketGridCell: View {
 
 
 #Preview {
-    MarketGridCell(title: "Пример")
+    MarketGridCell(product: Product.sampleProduct())
 }

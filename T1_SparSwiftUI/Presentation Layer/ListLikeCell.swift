@@ -20,15 +20,12 @@ struct ListLikeCell: View {
     
     var body: some View {
         VStack (alignment: .center, spacing: 0) {
-            // Кнопка списка
             Button(action: {
                 isListSelected.toggle()
             }) {
                 Image("List")
                     .frame(width: widthButton, height: heightButton)
             }
-            
-            // Кнопка сердечка
             Button(action: {
                 isHeartSelected.toggle()
             }) {
@@ -36,9 +33,10 @@ struct ListLikeCell: View {
                     .frame(width: widthButton, height: heightButton)
             }
         }
-        .background(Color.white)
+        .background(Color.white.opacity(0.5))
         .frame(width: width, height: height)
         .cornerRadius(cornerRadius)
+        .opacity(0.9)
     }
 }
 

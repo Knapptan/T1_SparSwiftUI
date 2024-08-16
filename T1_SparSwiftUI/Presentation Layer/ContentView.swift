@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isGridView: Bool = true
-    let items = (1...20).map { "Item \($0)" }
+    let products = (1...20).map {_ in Product.sampleProduct()}
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -20,18 +20,19 @@ struct ContentView: View {
             VStack {
                 Divider()
                 if isGridView {
+                    // доделать грид - тени обрезаются и пробелы не ровные
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 1) {
-                            ForEach(items, id: \.self) { item in
-                                MarketGridCell(title: item)
+                            ForEach(products) { product in
+                                MarketGridCell(product: product)
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 5)
                 } else {
                     ScrollView {
                         LazyVStack {
-                            ForEach(items, id: \.self) { item in
+                            ForEach(products) { product in
                                 MarketListCell(product: Product(name: "Product Name", rating: 4.1, reviews: 19, price: 10.0, discount: 15, countryOfOrigin: .usa, isSoldByWeight: false, pricePerKilogram: nil, weight: nil, quantity: 1))
                             }
                         }

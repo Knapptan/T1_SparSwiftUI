@@ -20,7 +20,8 @@ enum Country: String, CaseIterable {
     case unknown = ""
 }
 
-struct Product {
+struct Product: Identifiable {
+    let id = UUID()                     // Уникальный идентификатор для каждого продукта
     let name: String                    // Название продукта
     let rating: Double?                 // Рейтинг (может быть отсутствующим)
     let reviews: Int?                   // Количество отзывов (может быть отсутствующим)
@@ -49,7 +50,7 @@ struct Product {
     // Статический метод для предоставления примерного продукта
     static func sampleProduct() -> Product {
         return Product(
-            name: "Яблоки Грэнни Смит",
+            name: "Яблоки Грэнни Смит Зеленые, спелые, сочные",
             rating: 4.5,
             reviews: 112,
             price: 120.0,

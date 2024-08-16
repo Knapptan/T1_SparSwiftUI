@@ -26,6 +26,8 @@
 		924B238D2C6FB02C006B94DA /* ProductSrtuct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23802C6FB02C006B94DA /* ProductSrtuct.swift */; };
 		924B238E2C6FB02C006B94DA /* PiecesKilogramsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23812C6FB02C006B94DA /* PiecesKilogramsToggle.swift */; };
 		924B23912C6FBF03006B94DA /* ProductCellRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23902C6FBF03006B94DA /* ProductCellRating.swift */; };
+		924B23932C6FF1A7006B94DA /* ImageListOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23922C6FF1A7006B94DA /* ImageListOverlayView.swift */; };
+		924B23952C70016F006B94DA /* ImageGridOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23942C70016F006B94DA /* ImageGridOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		924B23802C6FB02C006B94DA /* ProductSrtuct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSrtuct.swift; sourceTree = "<group>"; };
 		924B23812C6FB02C006B94DA /* PiecesKilogramsToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesKilogramsToggle.swift; sourceTree = "<group>"; };
 		924B23902C6FBF03006B94DA /* ProductCellRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellRating.swift; sourceTree = "<group>"; };
+		924B23922C6FF1A7006B94DA /* ImageListOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListOverlayView.swift; sourceTree = "<group>"; };
+		924B23942C70016F006B94DA /* ImageGridOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				924B23752C6FB02C006B94DA /* ImageDiscount25PercentLable.swift */,
 				924B237F2C6FB02C006B94DA /* ImageCardLable.swift */,
 				924B237B2C6FB02C006B94DA /* ImageNewLable.swift */,
+				924B23922C6FF1A7006B94DA /* ImageListOverlayView.swift */,
+				924B23942C70016F006B94DA /* ImageGridOverlayView.swift */,
 			);
 			path = ProductImage;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 				924B238C2C6FB02C006B94DA /* ImageCardLable.swift in Sources */,
 				924B23832C6FB02C006B94DA /* CustomSparColors.swift in Sources */,
 				924B23842C6FB02C006B94DA /* MarketGridCell.swift in Sources */,
+				924B23932C6FF1A7006B94DA /* ImageListOverlayView.swift in Sources */,
 				924B23852C6FB02C006B94DA /* ListLikeCell.swift in Sources */,
 				924B238D2C6FB02C006B94DA /* ProductSrtuct.swift in Sources */,
 				924B23882C6FB02C006B94DA /* ImageNewLable.swift in Sources */,
@@ -214,6 +221,7 @@
 				924B23862C6FB02C006B94DA /* ImageDiscountLable.swift in Sources */,
 				924B23912C6FBF03006B94DA /* ProductCellRating.swift in Sources */,
 				924B238B2C6FB02C006B94DA /* ProductInfoView.swift in Sources */,
+				924B23952C70016F006B94DA /* ImageGridOverlayView.swift in Sources */,
 				924B23872C6FB02C006B94DA /* ProductLineRating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
