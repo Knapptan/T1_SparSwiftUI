@@ -47,7 +47,7 @@ struct Product: Identifiable {
     static func sampleProduct() -> Product {
         return Product(
             name: "Яблоки Грэнни Смит Зеленые, спелые, сочные", 
-            imageName: nil,
+            imageName: "RedApples",
             rating: 4.1,
             reviews: 12,
             price: 120.0,

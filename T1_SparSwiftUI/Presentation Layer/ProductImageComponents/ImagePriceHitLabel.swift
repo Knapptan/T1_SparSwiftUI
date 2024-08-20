@@ -10,22 +10,29 @@ import SwiftUI
 struct ImagePriceHitLabel: View {
     let width: CGFloat = 84
     let height: CGFloat = 16
+    let textWidth: CGFloat = 66
+    let textHight: CGFloat = 10
     let cornerRadius: CGFloat = 6
     
     var body: some View {
-        Text("Удар по ценам")
-            .font(.caption2)
-            .foregroundColor(.white)
-            .frame(width: width, height: height)
-            .background(Color.seller001)
-            .clipShape(
-                .rect(
-                    topLeadingRadius: 0,
-                    bottomLeadingRadius: 0,
-                    bottomTrailingRadius: cornerRadius,
-                    topTrailingRadius: cornerRadius
-                )
+        HStack(alignment: .bottom, spacing: 4){
+            Spacer()
+            Text("Удар по ценам")
+                .font(.system(size: 8))
+                .foregroundColor(.white)
+                .frame(width: textWidth, height: textHight)
+                .padding()
+        }
+        .frame(width: width, height: height)
+        .background(Color.seller001)
+        .clipShape(
+            .rect(
+                topLeadingRadius: 0,
+                bottomLeadingRadius: 0,
+                bottomTrailingRadius: cornerRadius,
+                topTrailingRadius: cornerRadius
             )
+    )
     }
 }
 

@@ -21,13 +21,13 @@ struct ContentView: View {
                 Divider()
                 if isGridView {
                     ScrollView {
-                        LazyVGrid(columns: columns, spacing: 1) {
+                        LazyVGrid(columns: columns, spacing: 8) {
                             ForEach(products) { product in
                                 MarketGridCell(product: product)
                             }
                         }
                     }
-                    .padding(.horizontal, 5)
+                    .padding(.horizontal)
                 } else {
                     ScrollView {
                         LazyVStack {

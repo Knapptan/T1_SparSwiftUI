@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PiecesKilogramsToggle: View {
     @State private var isKgSelected = false
-
+    
     var body: some View {
         VStack {
             Toggle(isOn: $isKgSelected) {
@@ -22,22 +22,24 @@ struct PiecesKilogramsToggle: View {
 
 struct CustomStyle: ToggleStyle {
     let width: CGFloat = 189
+    let minWidth: CGFloat = 160
     let height: CGFloat = 28
     let widthButton: CGFloat = 92.5
+    let minWidthButton: CGFloat = 77
     let heightButton : CGFloat = 24
     let cornerRadius: CGFloat = 8
-
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
             configuration.label
             
             ZStack(alignment: configuration.isOn ? .trailing : .leading) {
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: width, height: height)
+                    .frame(minWidth: minWidth, maxWidth: width, maxHeight: height)
                     .foregroundColor(.gray.opacity(0.2))
                 
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: widthButton, height: heightButton)
+                    .frame(minWidth: minWidthButton, maxWidth: widthButton, maxHeight: heightButton)
                     .padding(2)
                     .foregroundColor(.white)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
@@ -48,7 +50,6 @@ struct CustomStyle: ToggleStyle {
                     }
                 
                 HStack {
-                    
                     Spacer()
                     
                     Text("Шт")
@@ -64,7 +65,7 @@ struct CustomStyle: ToggleStyle {
                     
                     Spacer()
                 }
-                .frame(width: width, height: height)
+                .frame(minWidth: minWidth, maxWidth: width, minHeight: height)
             }
         }
     }

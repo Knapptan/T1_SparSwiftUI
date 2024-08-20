@@ -9,24 +9,24 @@ import SwiftUI
 
 struct MarketGridCell: View {
     var product: Product // заменить на вью модель
+    let width: CGFloat = 168
+    let height : CGFloat = 280
+    let textHeight: CGFloat = 44
     
     var body: some View {
-        let width: CGFloat = 168
-        let height : CGFloat = 278
-        
-        VStack (alignment: .center ,spacing: 4){
-            ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.cardPrice, showDiscountLabel: true)
-                .padding(.top)
+        VStack (spacing: 2){
+            Spacer()
+            ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.new, showDiscountLabel: true)
             ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
-            // Нужно проверить размеры и выставить границы
+                .frame(height: textHeight)
             PiecesKilogramsToggle()
+                .frame(width: width)
             KilogramsSetter()
-                .frame(width: 160, height: 36 )
-                .padding(.vertical, 2) // на глаз - переделать
+                .frame(width: width)
+            Spacer()
         }
-        .frame(width: width, height: height)
-        .padding()
         .background(Color.white)
+        .frame(width: width, height: height)
         .clipShape(
             .rect(
                 topLeadingRadius: 16,
@@ -36,9 +36,6 @@ struct MarketGridCell: View {
             )
         )
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
-        .onAppear {
-        }
-        .padding(5)
     }
 }
 

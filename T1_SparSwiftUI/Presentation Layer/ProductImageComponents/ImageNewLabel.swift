@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct ImageNewLabel: View {
+    
     let width: CGFloat = 57
     let height: CGFloat = 16
+    let textWidth: CGFloat = 63
+    let textHight: CGFloat = 10
     let cornerRadius: CGFloat = 6
     
     var body: some View {
-        Text("Новинки")
-            .font(.caption2)
-            .foregroundColor(.white)
-            .frame(width: width, height: height)
-            .background(Color.seller002)
-            .clipShape(
-                .rect(
-                    topLeadingRadius: 0,
-                    bottomLeadingRadius: 0,
-                    bottomTrailingRadius: cornerRadius,
-                    topTrailingRadius: cornerRadius
-                )
+        HStack(alignment: .bottom, spacing: 4){
+            Spacer()
+            Text("Новинки")
+                .font(.system(size: 8))
+                .foregroundColor(.white)
+                .frame(width: textWidth, height: textHight)
+                .padding()
+        }
+        .frame(width: width, height: height)
+        .background(Color.seller002)
+        .clipShape(
+            .rect(
+                topLeadingRadius: 0,
+                bottomLeadingRadius: 0,
+                bottomTrailingRadius: cornerRadius,
+                topTrailingRadius: cornerRadius
             )
+        )
     }
 }
-
 
 #Preview {
     ImageNewLabel()

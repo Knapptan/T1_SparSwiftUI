@@ -13,7 +13,8 @@ struct KilogramsSetter: View {
     @State var rubls = 0
     @State var kopecks = 0
     
-    let minWidth: CGFloat = 189
+    let minWidth: CGFloat = 160
+    let width: CGFloat = 191
     let height: CGFloat = 36
     let widthButton: CGFloat = 14
     let heightButton: CGFloat = 14
@@ -71,7 +72,7 @@ struct KilogramsSetter: View {
                     .fontWeight(.heavy)
             }
         }
-        .frame(minWidth: minWidth, maxWidth: 191)
+        .frame(minWidth: minWidth, maxWidth: width)
         .frame(height: height)
         .background(Color.primary001)
         .cornerRadius(cornerRadius)

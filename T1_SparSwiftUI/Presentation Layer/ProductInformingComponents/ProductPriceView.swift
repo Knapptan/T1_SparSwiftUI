@@ -25,21 +25,17 @@ struct ProductPriceView: View {
                 Text(formattedRubls(price))
                     .fontWeight(.bold)
                     .font(.system(size: 20, design: .rounded))
-                    .minimumScaleFactor(0.5)
-                    .frame(height: heightText, alignment: .leading)
+                    .frame(maxHeight: heightText, alignment: .leading)
                     .lineLimit(1)
                 Text(formattedKopecks(price))
                     .font(.system(size: 16, design: .rounded))
                     .fontWeight(.bold)
-                    .frame(maxWidth: widthText, maxHeight: heightKopecks, alignment: .topLeading)
+                    .frame(maxHeight: heightText, alignment: .topLeading)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.5)
-//                    .padding(.top, 2)
-                
+                RublesPerKilogramLogo()
                 Spacer()
             }
-            .frame(maxWidth: 85, idealHeight: 20)
-            
+            .frame(maxWidth: .infinity, maxHeight: heightText)
             if discount != nil {
                 Text(formattedRubls(price))
                     .font(.caption2)

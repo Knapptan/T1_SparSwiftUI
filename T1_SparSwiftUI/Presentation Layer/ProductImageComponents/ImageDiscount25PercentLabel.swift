@@ -14,7 +14,6 @@ struct ImageDiscount25PercentLabel: View {
     
     var body: some View {
         Text("25%")
-//            .font(.custom("HelveticaNeue-Bold", size: 28, design: .rounded))
             .font(.system(size: 28, design: .rounded))
             .fontWeight(.heavy)
             .foregroundColor(.additional004)

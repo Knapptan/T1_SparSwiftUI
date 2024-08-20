@@ -63,7 +63,6 @@ struct ImageListOverlayView: View {
         }
         .frame(width: width, height: height)
         .cornerRadius(6)
-        .shadow(radius: 10)
     }
 }
 
