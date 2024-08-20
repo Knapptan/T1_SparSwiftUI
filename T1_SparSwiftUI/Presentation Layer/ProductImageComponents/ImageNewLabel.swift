@@ -1,5 +1,5 @@
 //
-//  ImageCardLable.swift
+//  ImageNewLabel.swift
 //  T1_SwiftSpar
 //
 //  Created by Knapptan on 16.08.2024.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ImageCardLable: View {
-    let width: CGFloat = 81
+struct ImageNewLabel: View {
+    let width: CGFloat = 57
     let height: CGFloat = 16
     let cornerRadius: CGFloat = 6
     
     var body: some View {
-        Text("Цена по карте")
+        Text("Новинки")
             .font(.caption2)
             .foregroundColor(.white)
             .frame(width: width, height: height)
-            .background(Color.seller003)
+            .background(Color.seller002)
             .clipShape(
                 .rect(
                     topLeadingRadius: 0,
@@ -29,6 +29,7 @@ struct ImageCardLable: View {
     }
 }
 
+
 #Preview {
-    ImageCardLable()
+    ImageNewLabel()
 }

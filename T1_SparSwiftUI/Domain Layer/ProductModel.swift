@@ -20,6 +20,13 @@ enum Country: String, CaseIterable {
     case unknown = ""
 }
 
+enum ProductPromotionType {
+    case priceHit
+    case cardPrice
+    case new
+    case none
+}
+
 struct Product: Identifiable {
     let id = UUID()                     // Уникальный идентификатор для каждого продукта
     let name: String                    // Название продукта
@@ -34,11 +41,13 @@ struct Product: Identifiable {
     let pricePerKilogram: Double?       // Цена за килограмм (если продажа по весу)
     let weight: Double?                 // Вес продукта в килограммах (если продажа по весу)
     let quantity: Int?                  // Количество штук (если продажа поштучно)
+    let promotion: ProductPromotionType // Тип акции - новый/цена по карте/удар по ценам
     
     // Статический метод для предоставления примерного продукта
     static func sampleProduct() -> Product {
         return Product(
-            name: "Яблоки Грэнни Смит Зеленые, спелые, сочные", imageName: "ProductImage",
+            name: "Яблоки Грэнни Смит Зеленые, спелые, сочные", 
+            imageName: nil,
             rating: 4.1,
             reviews: 12,
             price: 120.0,
@@ -48,7 +57,8 @@ struct Product: Identifiable {
             isSoldByQuantity: false,
             pricePerKilogram: 120.0,
             weight: 1.5,
-            quantity: nil
+            quantity: nil,
+            promotion: ProductPromotionType.new
         )
     }
 }

@@ -8,35 +8,59 @@
 import SwiftUI
 
 struct ImageGridOverlayView: View {
-    var product: Product
+    var imageName: String?
+    var promotion: ProductPromotionType
+    var showDiscountLabel: Bool
+    var rating: Double?
+    
+    let width: CGFloat = 168
+    let height : CGFloat = 168
+    let maxWidthLable: CGFloat = 84
+    let maxHeightLable : CGFloat = 16
+    let maxWidthDiscount: CGFloat = 32
+    let maxHeightDiscount : CGFloat = 20
     
     var body: some View {
-        let width: CGFloat = 168
-        let height : CGFloat = 168
-        let maxWidthLable: CGFloat = 84
-        let maxHeightLable : CGFloat = 16
-        let maxWidthDiscount: CGFloat = 32
-        let maxHeightDiscount : CGFloat = 20
         
         ZStack {
-            Image(product.imageName ?? "AppIcon")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: width, height: height)
-            
+            if let imageName = imageName, !imageName.isEmpty {
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width, height: height)
+            } else {
+                Image(systemName: "photo.artframe")
+                    .resizable()
+                    .padding(50)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
+                    .foregroundColor(Color.secondary)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width, height: height)
+            }
             VStack {
-                HStack (alignment: .top){
-                    ImageDiscountLable()
-                        .frame(maxWidth: maxWidthLable, maxHeight: maxHeightLable)
+                HStack (alignment: .top, spacing: 0){
+                    switch promotion {
+                    case .priceHit:
+                        ImagePriceHitLabel()
+                    case .cardPrice:
+                        ImageCardLabel()
+                    case .new:
+                        ImageNewLabel()
+                    case .none:
+                        EmptyView()
+                    }
                     Spacer()
                     ListLikeCell()
                 }
                 Spacer()
                 HStack (alignment: .bottom){
-                    ProductCellRating(rating: product.rating)
+                    ProductCellRating(rating: rating)
                     Spacer()
-                    ImageDiscount25PercentLable()
-                        .frame(maxWidth: maxWidthDiscount, maxHeight: maxHeightDiscount)
+                    if showDiscountLabel {
+                        ImageDiscount25PercentLabel()
+                            .frame(maxWidth: maxWidthDiscount, maxHeight: maxHeightDiscount)
+                    }
                 }
             }
             .frame(width: width, height: height)
@@ -48,5 +72,5 @@ struct ImageGridOverlayView: View {
     }
 }
 #Preview {
-    ImageGridOverlayView(product: Product.sampleProduct())
+    ImageGridOverlayView(imageName: nil, promotion: ProductPromotionType.new, showDiscountLabel: true, rating: nil)
 }

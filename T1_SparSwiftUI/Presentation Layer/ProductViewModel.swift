@@ -10,7 +10,8 @@ import Combine
 
 class ProductViewModel: ObservableObject, Identifiable {
     @Published var product: Product
-    
+    @Published var showNewLabel: Bool = true // переделать к вычисляемому
+
     var id: UUID {
         product.id
     }

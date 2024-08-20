@@ -1,15 +1,14 @@
 //
-//  KilogramsSetter.swift
-//  T1_SwiftSpar
+//  PiecesSetter.swift
+//  T1_SparSwiftUI
 //
-//  Created by Knapptan on 15.08.2024.
+//  Created by Knapptan on 20.08.2024.
 //
 
 import SwiftUI
 
-
-struct KilogramsSetter: View {
-    @State private var kilograms = 0.0
+struct PiecesSetter: View {
+    @State private var pieces: Int = 0
     @State var rubls = 0
     @State var kopecks = 0
     
@@ -26,8 +25,8 @@ struct KilogramsSetter: View {
     var body: some View {
         HStack {
             Button(action: {
-                if kilograms >= 0.1 {
-                    kilograms -= 0.1
+                if pieces >= 1 {
+                    pieces -= 1
                 }
             }) {
                 Image(systemName: "minus")
@@ -39,7 +38,7 @@ struct KilogramsSetter: View {
             Spacer()
             
             VStack(alignment: .center, spacing: -4) {
-                Text("\(formatKilograms(kilograms)) кг")
+                Text("\(pieces) шт")
                     .frame(width: widthText, height: heightText)
                     .font(.caption)
                     .foregroundColor(Color.white)
@@ -62,7 +61,7 @@ struct KilogramsSetter: View {
             Spacer()
             
             Button(action: {
-                kilograms += 0.1
+                pieces += 1
             }) {
                 Image(systemName: "plus")
                     .frame(width: widthButton, height: heightButton)
@@ -76,12 +75,9 @@ struct KilogramsSetter: View {
         .background(Color.primary001)
         .cornerRadius(cornerRadius)
     }
-    
-    func formatKilograms(_ kilograms: Double) -> String {
-            return String(format: "%.1f", kilograms)
-    }
 }
 
+
 #Preview {
-    KilogramsSetter()
+    PiecesSetter()
 }

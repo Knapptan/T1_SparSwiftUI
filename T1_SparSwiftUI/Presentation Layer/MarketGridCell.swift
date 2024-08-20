@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MarketGridCell: View {
-    var product: Product
+    var product: Product // заменить на вью модель
     
     var body: some View {
         let width: CGFloat = 168
         let height : CGFloat = 278
         
         VStack (alignment: .center ,spacing: 4){
-            ImageGridOverlayView(product: product)
+            ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.cardPrice, showDiscountLabel: true)
                 .padding(.top)
             ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
             // Нужно проверить размеры и выставить границы

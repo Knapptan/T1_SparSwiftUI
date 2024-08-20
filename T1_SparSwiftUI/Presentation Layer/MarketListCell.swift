@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MarketListCell: View {
-    var product: Product
+    var product: Product // заменить на вью модель 
     
     var body: some View {
         let width: CGFloat = 375
@@ -16,7 +16,7 @@ struct MarketListCell: View {
         
         VStack {
             HStack (spacing: 8){
-                ImageListOverlayView()
+                ImageListOverlayView(imageName: product.imageName, promotion: ProductPromotionType.cardPrice, showDiscountLabel: true)
                 VStack (alignment: .leading, spacing: 0){
                     HStack (spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {

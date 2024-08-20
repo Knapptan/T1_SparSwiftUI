@@ -1,5 +1,5 @@
 //
-//  ImageDiscountLable.swift
+//  ImagePriceHitLabel.swift
 //  T1_SwiftSpar
 //
 //  Created by Knapptan on 16.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageDiscountLable: View {
+struct ImagePriceHitLabel: View {
     let width: CGFloat = 84
     let height: CGFloat = 16
     let cornerRadius: CGFloat = 6
@@ -30,5 +30,5 @@ struct ImageDiscountLable: View {
 }
 
 #Preview {
-    ImageDiscountLable()
+    ImagePriceHitLabel()
 }
