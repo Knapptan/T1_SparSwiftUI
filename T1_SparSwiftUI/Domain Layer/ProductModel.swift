@@ -23,40 +23,29 @@ enum Country: String, CaseIterable {
 struct Product: Identifiable {
     let id = UUID()                     // Уникальный идентификатор для каждого продукта
     let name: String                    // Название продукта
+    let imageName: String?              // Имя файла изображения (может быть отсутствующим)"ProductImage"
     let rating: Double?                 // Рейтинг (может быть отсутствующим)
     let reviews: Int?                   // Количество отзывов (может быть отсутствующим)
     let price: Double                   // Цена
     let discount: Double?               // Скидка (может быть отсутствующей)
     let countryOfOrigin: Country        // Страна производства (может быть отсутствующей)
-    let isSoldByWeight: Bool            // Признак продажи по весу или поштучно
+    let isSoldByWeight: Bool            // Признак продажи по весу
+    let isSoldByQuantity: Bool          // Признак продажи поштучно
     let pricePerKilogram: Double?       // Цена за килограмм (если продажа по весу)
     let weight: Double?                 // Вес продукта в килограммах (если продажа по весу)
     let quantity: Int?                  // Количество штук (если продажа поштучно)
     
-    // Вычисляемые свойства
-    var finalPrice: Double {
-        let basePrice = isSoldByWeight ? (pricePerKilogram ?? 0) * (weight ?? 1) : price
-        return discount != nil ? basePrice - (basePrice * discount! / 100) : basePrice
-    }
-    
-    var displayPrice: String {
-        if isSoldByWeight {
-            return "\(finalPrice) per \(weight ?? 1) kg"
-        } else {
-            return "\(finalPrice) for \(quantity ?? 1) pcs"
-        }
-    }
-    
     // Статический метод для предоставления примерного продукта
     static func sampleProduct() -> Product {
         return Product(
-            name: "Яблоки Грэнни Смит Зеленые, спелые, сочные",
-            rating: 4.5,
-            reviews: 112,
+            name: "Яблоки Грэнни Смит Зеленые, спелые, сочные", imageName: "ProductImage",
+            rating: 4.1,
+            reviews: 12,
             price: 120.0,
             discount: 10.0,
             countryOfOrigin: .russia,
             isSoldByWeight: true,
+            isSoldByQuantity: false,
             pricePerKilogram: 120.0,
             weight: 1.5,
             quantity: nil

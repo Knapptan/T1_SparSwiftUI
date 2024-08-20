@@ -20,14 +20,18 @@ struct MarketListCell: View {
                 VStack (alignment: .leading, spacing: 0){
                     HStack (spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
-                            ProductLineRating(product: product)
-                            ProductInfoView(product: product)
+                            ProductLineRating(rating: product.rating)
+                            ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
                         }
                         ListLikeCell()
                             
                     }
                     VStack(alignment: .leading){
-                        PiecesKilogramsToggle()
+                        if product.isSoldByQuantity == true && product.isSoldByWeight == true{
+                            PiecesKilogramsToggle()
+                        } else {
+                            Spacer()
+                        }
                         KilogramsSetter()
                     }
                     .frame(minWidth: 168, idealWidth: 168,minHeight: 64, idealHeight: 64)

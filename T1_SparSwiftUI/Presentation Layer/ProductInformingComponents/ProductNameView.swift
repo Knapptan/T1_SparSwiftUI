@@ -1,5 +1,5 @@
 //
-//  ProductInfoView.swift
+//  ProductNameView.swift
 //  T1_SwiftSpar
 //
 //  Created by Knapptan on 16.08.2024.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct ProductInfoView: View {
+struct ProductNameView: View {
+    var name: String
+    var countryOfOrigin: Country
     
-    var product: Product
     let width: CGFloat = 160
     let height : CGFloat = 56
     let widthText: CGFloat = 159
@@ -18,12 +19,12 @@ struct ProductInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 1) {
-            Text(product.name)
+            Text(name)
                 .font(.caption)
                 .frame(width: widthText,height: heightText, alignment: .leading)
                 .lineLimit(2)
                 .minimumScaleFactor(0.5)
-            Text(product.countryOfOrigin.rawValue)
+            Text(countryOfOrigin.rawValue)
                 .font(.caption2)
                 .frame(width: widthText,height: heightSecondText, alignment: .leading)
                 .lineLimit(1)
@@ -34,5 +35,5 @@ struct ProductInfoView: View {
 }
 
 #Preview {
-    ProductInfoView(product: Product.sampleProduct())
+    ProductNameView(name: "Название продукта", countryOfOrigin: Country.france)
 }

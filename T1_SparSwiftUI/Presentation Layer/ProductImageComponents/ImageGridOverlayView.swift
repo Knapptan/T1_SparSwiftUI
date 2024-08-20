@@ -19,7 +19,7 @@ struct ImageGridOverlayView: View {
         let maxHeightDiscount : CGFloat = 20
         
         ZStack {
-            Image("ProductImage")
+            Image(product.imageName ?? "AppIcon")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width, height: height)
@@ -33,7 +33,7 @@ struct ImageGridOverlayView: View {
                 }
                 Spacer()
                 HStack (alignment: .bottom){
-                    ProductCellRating(product: product)
+                    ProductCellRating(rating: product.rating)
                     Spacer()
                     ImageDiscount25PercentLable()
                         .frame(maxWidth: maxWidthDiscount, maxHeight: maxHeightDiscount)

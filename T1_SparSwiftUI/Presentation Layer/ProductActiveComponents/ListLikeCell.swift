@@ -10,8 +10,8 @@ import SwiftUI
 struct ListLikeCell: View {
     let width: CGFloat = 32
     let height: CGFloat = 64
-    let widthButton: CGFloat = 32
-    let heightButton : CGFloat = 32
+    let widthButton: CGFloat = 14
+    let heightButton : CGFloat = 14
     let cornerRadius: CGFloat = 20
 
     
@@ -24,13 +24,20 @@ struct ListLikeCell: View {
                 isListSelected.toggle()
             }) {
                 Image("List")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: widthButton, height: heightButton)
+                    .padding(9)
+
             }
             Button(action: {
                 isHeartSelected.toggle()
             }) {
                 Image(isHeartSelected ? "HeartFill" : "Heart")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: widthButton, height: heightButton)
+                    .padding(9)
             }
         }
         .background(Color.white.opacity(0.5))

@@ -17,7 +17,7 @@ struct MarketGridCell: View {
         VStack (alignment: .center ,spacing: 4){
             ImageGridOverlayView(product: product)
                 .padding(.top)
-            ProductInfoView(product: product)
+            ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
             // Нужно проверить размеры и выставить границы
             PiecesKilogramsToggle()
             KilogramsSetter()

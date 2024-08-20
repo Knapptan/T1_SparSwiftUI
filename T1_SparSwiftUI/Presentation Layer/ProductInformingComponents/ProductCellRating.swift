@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProductCellRating: View {
-    var product: Product
+    var rating: Double?
+    
     let width: CGFloat = 41
     let height : CGFloat = 20
     let widthText: CGFloat = 15
@@ -22,9 +23,11 @@ struct ProductCellRating: View {
     var body: some View {
         HStack (spacing: 2){
             Image("Star")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: widthStar, height: heightStar)
                 .padding(paddingStar)
-            Text("\(product.rating ?? 0, specifier: "%.1f")")
+            Text("\(rating ?? 0, specifier: "%.1f")")
                 .font(.caption)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
@@ -35,5 +38,5 @@ struct ProductCellRating: View {
 }
 
 #Preview {
-    ProductCellRating(product: Product.sampleProduct())
+    ProductCellRating(rating: 4.1)
 }

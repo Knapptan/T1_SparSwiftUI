@@ -14,13 +14,12 @@ struct ContentView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 Divider()
                 if isGridView {
-                    // доделать грид - тени обрезаются и пробелы не ровные
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 1) {
                             ForEach(products) { product in
@@ -33,7 +32,7 @@ struct ContentView: View {
                     ScrollView {
                         LazyVStack {
                             ForEach(products) { product in
-                                MarketListCell(product: Product(name: "Product Name", rating: 4.1, reviews: 19, price: 10.0, discount: 15, countryOfOrigin: .usa, isSoldByWeight: false, pricePerKilogram: nil, weight: nil, quantity: 1))
+                                MarketListCell(product: product)
                             }
                         }
                     }
