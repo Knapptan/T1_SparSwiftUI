@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct KilogramsSetter: View {
-    @State private var kilograms = 0.0
+    @Binding var kilograms: Double
     @State var rubls = 0
     @State var kopecks = 0
     
@@ -83,6 +83,6 @@ struct KilogramsSetter: View {
     }
 }
 
-#Preview {
-    KilogramsSetter()
-}
+//#Preview {
+//    KilogramsSetter()
+//}

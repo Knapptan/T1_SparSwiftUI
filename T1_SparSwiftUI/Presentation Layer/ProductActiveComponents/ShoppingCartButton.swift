@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShoppingCartButton: View {
-
+    
     let width: CGFloat = 48
     let height: CGFloat = 36
     let widthImage: CGFloat = 13
@@ -35,4 +35,3 @@ struct ShoppingCartButton: View {
 #Preview {
     ShoppingCartButton()
 }
-

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PiecesSetter: View {
-    @State private var pieces: Int = 0
+    @Binding var pieces: Int
     @State var rubls = 0
     @State var kopecks = 0
     
@@ -77,7 +77,7 @@ struct PiecesSetter: View {
     }
 }
 
-
-#Preview {
-    PiecesSetter()
-}
+//
+//#Preview {
+//    PiecesSetter()
+//}

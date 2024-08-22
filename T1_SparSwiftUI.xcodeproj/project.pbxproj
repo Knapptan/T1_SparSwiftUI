@@ -33,6 +33,7 @@
 		924B23952C70016F006B94DA /* ImageGridOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B23942C70016F006B94DA /* ImageGridOverlayView.swift */; };
 		9296F50D2C74C9C100D024DD /* PiecesSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F50C2C74C9C100D024DD /* PiecesSetter.swift */; };
 		9296F50F2C74EBBE00D024DD /* RublesPerKilogramLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F50E2C74EBBE00D024DD /* RublesPerKilogramLogo.swift */; };
+		9296F5112C764E3C00D024DD /* PurchaseModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		924B23942C70016F006B94DA /* ImageGridOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridOverlayView.swift; sourceTree = "<group>"; };
 		9296F50C2C74C9C100D024DD /* PiecesSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiecesSetter.swift; sourceTree = "<group>"; };
 		9296F50E2C74EBBE00D024DD /* RublesPerKilogramLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublesPerKilogramLogo.swift; sourceTree = "<group>"; };
+		9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModuleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				924B237C2C6FB02C006B94DA /* KilogramsSetter.swift */,
+				9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */,
 				9296F50C2C74C9C100D024DD /* PiecesSetter.swift */,
 				924B23782C6FB02C006B94DA /* ListLikeCell.swift */,
 				924B23812C6FB02C006B94DA /* PiecesKilogramsToggle.swift */,
@@ -283,6 +286,7 @@
 				924B23952C70016F006B94DA /* ImageGridOverlayView.swift in Sources */,
 				924B23872C6FB02C006B94DA /* ProductLineRating.swift in Sources */,
 				92432AA02C73628900589167 /* ShoppingCartButton.swift in Sources */,
+				9296F5112C764E3C00D024DD /* PurchaseModuleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

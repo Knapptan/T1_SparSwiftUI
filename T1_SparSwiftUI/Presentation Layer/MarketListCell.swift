@@ -28,11 +28,11 @@ struct MarketListCell: View {
                     }
                     VStack(alignment: .leading){
                         if product.isSoldByQuantity == true && product.isSoldByWeight == true{
-                            PiecesKilogramsToggle()
+//                            PiecesKilogramsToggle(isKgSelected: <#Binding<Bool>#>)
                         } else {
                             Spacer()
                         }
-                        KilogramsSetter()
+//                        KilogramsSetter(kilograms: <#Binding<Double>#>)
                     }
                     .frame(minWidth: 168, idealWidth: 168,minHeight: 64, idealHeight: 64)
                 }

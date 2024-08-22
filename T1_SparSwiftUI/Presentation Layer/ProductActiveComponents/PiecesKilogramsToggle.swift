@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct PiecesKilogramsToggle: View {
-    @State private var isKgSelected = false
+    @Binding var isKgSelected: Bool
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct PiecesKilogramsToggle: View {
 
 struct CustomStyle: ToggleStyle {
     let width: CGFloat = 189
-    let minWidth: CGFloat = 160
+    let minWidth: CGFloat = 158
     let height: CGFloat = 28
     let widthButton: CGFloat = 92.5
     let minWidthButton: CGFloat = 77
@@ -70,7 +70,7 @@ struct CustomStyle: ToggleStyle {
         }
     }
 }
-
-#Preview {
-    PiecesKilogramsToggle()
-}
+//
+//#Preview {
+//    PiecesKilogramsToggle(isKgSelected: true)
+//}
