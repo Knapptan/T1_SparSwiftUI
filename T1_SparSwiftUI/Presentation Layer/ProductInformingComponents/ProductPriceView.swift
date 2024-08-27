@@ -12,7 +12,8 @@ struct ProductPriceView: View {
     var price: Double
     var discount: Double?
     
-    let width: CGFloat = 160
+    let width: CGFloat = 90
+    let maxWidth: CGFloat = 160
     let height : CGFloat = 56
     let widthText: CGFloat = 56
     let heightText : CGFloat = 22
@@ -24,18 +25,18 @@ struct ProductPriceView: View {
             HStack (spacing: 1){
                 Text(formattedRubls(price))
                     .fontWeight(.bold)
-                    .font(.system(size: 20, design: .rounded))
+                    .font(.system(size: 18, design: .rounded))
                     .frame(maxHeight: heightText, alignment: .leading)
                     .lineLimit(1)
                 Text(formattedKopecks(price))
-                    .font(.system(size: 16, design: .rounded))
+                    .font(.system(size: 14, design: .rounded))
                     .fontWeight(.bold)
                     .frame(maxHeight: heightText, alignment: .topLeading)
                     .lineLimit(2)
                 RublesPerKilogramLogo()
                 Spacer()
             }
-            .frame(maxWidth: .infinity, maxHeight: heightText)
+            .frame(minWidth: width, maxWidth: .infinity, maxHeight: heightText)
             if discount != nil {
                 Text(formattedRubls(price))
                     .font(.caption2)

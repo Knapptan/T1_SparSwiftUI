@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PiecesSetter: View {
     @Binding var pieces: Int
+    var onZero: () -> Void
     @State var rubls = 0
     @State var kopecks = 0
     
@@ -27,6 +28,9 @@ struct PiecesSetter: View {
             Button(action: {
                 if pieces >= 1 {
                     pieces -= 1
+                }
+                if pieces == 0 {
+                    onZero()
                 }
             }) {
                 Image(systemName: "minus")
@@ -77,7 +81,6 @@ struct PiecesSetter: View {
     }
 }
 
-//
-//#Preview {
-//    PiecesSetter()
-//}
+#Preview {
+    PiecesSetter(pieces: .constant(1), onZero: {})
+}

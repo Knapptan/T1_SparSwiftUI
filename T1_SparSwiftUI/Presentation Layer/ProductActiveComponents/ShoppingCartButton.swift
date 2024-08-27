@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ShoppingCartButton: View {
+    @Binding var isShoppingCart: Bool
     
     let width: CGFloat = 48
     let height: CGFloat = 36
@@ -18,7 +19,7 @@ struct ShoppingCartButton: View {
     var body: some View {
         HStack {
             Button(action: {
-                print("Add to shopping cart")
+                isShoppingCart.toggle()
             }) {
                 Image("ShoppingCart")
                     .resizable()
@@ -33,5 +34,5 @@ struct ShoppingCartButton: View {
 }
 
 #Preview {
-    ShoppingCartButton()
+    ShoppingCartButton(isShoppingCart: .constant(false))
 }

@@ -12,6 +12,7 @@ struct KilogramsSetter: View {
     @Binding var kilograms: Double
     @State var rubls = 0
     @State var kopecks = 0
+    var onZero: () -> Void
     
     let minWidth: CGFloat = 160
     let width: CGFloat = 191
@@ -28,8 +29,11 @@ struct KilogramsSetter: View {
         HStack {
             Button(action: {
                 if kilograms >= 0.1 {
-                    kilograms -= 0.1
-                }
+                     kilograms -= 0.1
+                 }
+                 if kilograms == 0 {
+                     onZero()
+                 }
             }) {
                 Image(systemName: "minus")
                     .frame(width: widthButton, height: heightButton)
@@ -83,6 +87,6 @@ struct KilogramsSetter: View {
     }
 }
 
-//#Preview {
-//    KilogramsSetter()
-//}
+#Preview {
+    KilogramsSetter(kilograms: .constant(0.5), onZero: {})
+}
