@@ -10,12 +10,12 @@ import SwiftUI
 
 struct KilogramsSetter: View {
     @Binding var kilograms: Double
+    var onZero: () -> Void
     @State var rubls = 0
     @State var kopecks = 0
-    var onZero: () -> Void
-    
-    let minWidth: CGFloat = 160
-    let width: CGFloat = 191
+
+    let minWidth: CGFloat = 189
+    let maxWidth: CGFloat = 191
     let height: CGFloat = 36
     let widthButton: CGFloat = 14
     let heightButton: CGFloat = 14
@@ -28,12 +28,10 @@ struct KilogramsSetter: View {
     var body: some View {
         HStack {
             Button(action: {
-                if kilograms >= 0.1 {
-                     kilograms -= 0.1
-                 }
-                 if kilograms == 0 {
-                     onZero()
-                 }
+                kilograms = max(0.0, round((kilograms - 0.1) * 10) / 10.0)
+                if kilograms == 0.0 {
+                    onZero()
+                }
             }) {
                 Image(systemName: "minus")
                     .frame(width: widthButton, height: heightButton)
@@ -76,7 +74,7 @@ struct KilogramsSetter: View {
                     .fontWeight(.heavy)
             }
         }
-        .frame(minWidth: minWidth, maxWidth: width)
+        .frame(minWidth: minWidth, maxWidth: maxWidth)
         .frame(height: height)
         .background(Color.primary001)
         .cornerRadius(cornerRadius)

@@ -19,15 +19,10 @@ struct MarketGridCell: View {
     
     var body: some View {
         VStack ( spacing: 2){
-//            Spacer()
             ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.new, showDiscountLabel: true)
             ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
                 .frame(height: textHeight)
-//            PiecesKilogramsToggle(isKgSelected: <#Binding<Bool>#>)
-//                .frame(width: buttonWidh)
-//            KilogramsSetter(kilograms: <#Binding<Double>#>)
-//                .frame(width: setterWidh)
-            Spacer()
+            PurchaseModuleView(product: product)
         }
         .background(Color.white)
         .frame(width: width, height: height)

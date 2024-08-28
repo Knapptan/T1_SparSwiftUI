@@ -27,12 +27,14 @@ struct ProductPriceView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 18, design: .rounded))
                     .frame(maxHeight: heightText, alignment: .leading)
+                    .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(1)
                 Text(formattedKopecks(price))
                     .font(.system(size: 14, design: .rounded))
                     .fontWeight(.bold)
                     .frame(maxHeight: heightText, alignment: .topLeading)
-                    .lineLimit(2)
+                    .fixedSize(horizontal: true, vertical: false)
+                    .lineLimit(1)
                 RublesPerKilogramLogo()
                 Spacer()
             }
@@ -47,6 +49,7 @@ struct ProductPriceView: View {
             }
         }
         .frame(width: width,height: height)
+        .fixedSize(horizontal: true, vertical: false)
     }
     
     func formattedRubls(_ price: Double) -> String {
@@ -58,7 +61,7 @@ struct ProductPriceView: View {
         if let decimalIndex = kopecksString.firstIndex(of: ".") {
             return String(kopecksString[kopecksString.index(after: decimalIndex)...])
         }
-        return "00"  // Если не удалось извлечь копейки
+        return "00"
     }
     
 }

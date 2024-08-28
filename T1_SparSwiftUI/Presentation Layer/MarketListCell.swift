@@ -27,13 +27,7 @@ struct MarketListCell: View {
                             
                     }
                     VStack(alignment: .leading){
-                        if product.isSoldByQuantity == true && product.isSoldByWeight == true{
-//                            PiecesKilogramsToggle(isKgSelected: <#Binding<Bool>#>)
-                        } else {
-                            Spacer()
-                        }
-//                        KilogramsSetter(kilograms: <#Binding<Double>#>)
-                    }
+                        PurchaseModuleView(product: product)}
                     .frame(minWidth: 168, idealWidth: 168,minHeight: 64, idealHeight: 64)
                 }
             }

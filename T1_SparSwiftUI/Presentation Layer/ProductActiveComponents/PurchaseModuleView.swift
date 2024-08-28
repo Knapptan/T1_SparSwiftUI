@@ -19,9 +19,7 @@ struct PurchaseModuleView: View {
     let cornerRadius: CGFloat = 40
     
     var product: Product
-    
-    // Переделать логику поялвения вью на этом вью
-    
+
     var body: some View {
         VStack(spacing: 2) {
             if isInCart {
@@ -30,37 +28,33 @@ struct PurchaseModuleView: View {
                 }
                 
                 if isKgSelected {
-                    if kilograms > 0 {
-                        KilogramsSetter(kilograms: $kilograms, onZero: {
-                            resetToInitialState()
-                        })
-                    } else {
-                        ProductPriceView(price: 2200, discount: 3)
-                    }
+                    KilogramsSetter(kilograms: $kilograms, onZero: {
+                        resetToInitialState()
+                    })
                 } else {
-                    if pieces > 0 {
-                        PiecesSetter(pieces: $pieces, onZero: {
-                            resetToInitialState()
-                        })
-                    } else {
-                        ProductPriceView(price: 2200, discount: 3)
-                    }
+                    PiecesSetter(pieces: $pieces, onZero: {
+                        resetToInitialState()
+                    })
                 }
             } else {
+                Spacer()
                 HStack(alignment: .center) {
                     ProductPriceView(price: 2200, discount: 3)
+                    Spacer()
                     ShoppingCartButton(isShoppingCart: $isInCart)
                 }
+                .frame(height: 50)
             }
         }
         .frame(minWidth: minWidth, maxWidth: width, minHeight: height, maxHeight: height)
-        .background(Color.secondary)
+        .fixedSize(horizontal: true, vertical: false)
+        .background(Color.white)
     }
     
     func resetToInitialState() {
         isInCart = false
-        pieces = 0
-        kilograms = 0.0
+        pieces = 1
+        kilograms = 0.1
     }
 }
 

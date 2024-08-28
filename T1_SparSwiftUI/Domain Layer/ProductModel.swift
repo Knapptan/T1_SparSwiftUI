@@ -54,10 +54,10 @@ struct Product: Identifiable {
             discount: 10.0,
             countryOfOrigin: .russia,
             isSoldByWeight: true,
-            isSoldByQuantity: false,
+            isSoldByQuantity: true,
             pricePerKilogram: 120.0,
             weight: 1.5,
-            quantity: nil,
+            quantity: 5,
             promotion: ProductPromotionType.new
         )
     }
