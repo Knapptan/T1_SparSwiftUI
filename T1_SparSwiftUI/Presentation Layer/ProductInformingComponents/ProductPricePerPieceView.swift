@@ -1,41 +1,49 @@
 //
-//  ProductPriceView.swift
+//  ProductPricePerPieceView.swift
 //  T1_SparSwiftUI
 //
-//  Created by Knapptan on 19.08.2024.
+//  Created by Knapptan on 28.08.2024.
 //
 
 import SwiftUI
 
-struct ProductPriceView: View {
+struct ProductPricePerPieceView: View {
     
     var price: Double
     var discount: Double?
     
     let width: CGFloat = 90
     let maxWidth: CGFloat = 160
-    let height : CGFloat = 56
-    let widthText: CGFloat = 56
+    let height : CGFloat = 36
+    let widthText: CGFloat = 36
     let heightText : CGFloat = 22
     let heightKopecks : CGFloat = 20
     let heightSecondText : CGFloat = 14
     
+    var discountedPrice: Double {
+        if let discount = discount {
+            return price - (price * (discount / 100))
+        } else {
+            return price
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 1) {
             HStack (spacing: 1){
-                Text(formattedRubls(price))
+                Text(formattedRubls(discountedPrice))
                     .fontWeight(.bold)
                     .font(.system(size: 18, design: .rounded))
                     .frame(maxHeight: heightText, alignment: .leading)
                     .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(1)
-                Text(formattedKopecks(price))
+                Text(formattedKopecks(discountedPrice))
                     .font(.system(size: 14, design: .rounded))
                     .fontWeight(.bold)
                     .frame(maxHeight: heightText, alignment: .topLeading)
                     .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(1)
-                RublesPerKilogramLogo()
+                RublesPerPieceLogo()
                 Spacer()
             }
             .frame(minWidth: width, maxWidth: .infinity, maxHeight: heightText)
@@ -67,5 +75,5 @@ struct ProductPriceView: View {
 }
 
 #Preview {
-    ProductPriceView(price: 359, discount: 25)
+    ProductPricePerPieceView(price: 359, discount: 25)
 }

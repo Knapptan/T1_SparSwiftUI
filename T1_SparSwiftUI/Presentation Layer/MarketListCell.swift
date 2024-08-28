@@ -28,7 +28,7 @@ struct MarketListCell: View {
                     }
                     VStack(alignment: .leading){
                         PurchaseModuleView(product: product)}
-                    .frame(minWidth: 168, idealWidth: 168,minHeight: 64, idealHeight: 64)
+                    .frame(minWidth: 199, maxHeight: 64)
                 }
             }
         }

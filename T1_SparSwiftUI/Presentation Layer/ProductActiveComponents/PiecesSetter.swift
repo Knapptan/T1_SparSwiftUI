@@ -14,8 +14,8 @@ struct PiecesSetter: View {
     @State var rubls = 0
     @State var kopecks = 0
     
-    let minWidth: CGFloat = 189
-    let maxWidth: CGFloat = 191
+    let minWidth: CGFloat = 160
+    let maxWidth: CGFloat = 189
     let height: CGFloat = 36
     let widthButton: CGFloat = 14
     let heightButton: CGFloat = 14

@@ -13,8 +13,8 @@ struct PurchaseModuleView: View {
     @State private var pieces = 1
     @State private var kilograms = 0.1
     
-    let width: CGFloat = 199
     let minWidth: CGFloat = 158
+    let maxWidth: CGFloat = 199
     let height: CGFloat = 70
     let cornerRadius: CGFloat = 40
     
@@ -25,29 +25,35 @@ struct PurchaseModuleView: View {
             if isInCart {
                 if product.isSoldByQuantity && product.isSoldByWeight {
                     PiecesKilogramsToggle(isKgSelected: $isKgSelected)
+                        .frame(minWidth: minWidth, maxWidth: maxWidth)
+                        .frame(height: height / 2)
                 }
                 
                 if isKgSelected {
                     KilogramsSetter(kilograms: $kilograms, onZero: {
                         resetToInitialState()
                     })
+                    .frame(minWidth: minWidth, maxWidth: maxWidth)
+                    .frame(height: height / 2)
                 } else {
                     PiecesSetter(pieces: $pieces, onZero: {
                         resetToInitialState()
                     })
+                    .frame(minWidth: minWidth, maxWidth: maxWidth)
+                    .frame(height: height / 2)
                 }
             } else {
                 Spacer()
-                HStack(alignment: .center) {
-                    ProductPriceView(price: 2200, discount: 3)
+                HStack(alignment: .bottom) {
+                    ProductPricePerKilogramView(price: 2200, discount: 3)
                     Spacer()
                     ShoppingCartButton(isShoppingCart: $isInCart)
                 }
                 .frame(height: 50)
             }
         }
-        .frame(minWidth: minWidth, maxWidth: width, minHeight: height, maxHeight: height)
-        .fixedSize(horizontal: true, vertical: false)
+        .frame(minWidth: minWidth, maxWidth: maxWidth)
+        .frame(height: height)
         .background(Color.white)
     }
     

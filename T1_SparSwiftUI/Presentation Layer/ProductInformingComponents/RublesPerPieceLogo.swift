@@ -1,13 +1,13 @@
 //
-//  RublesPerKilogramLogo.swift
+//  RublesPerPieceLogo.swift
 //  T1_SparSwiftUI
 //
-//  Created by Knapptan on 20.08.2024.
+//  Created by Knapptan on 28.08.2024.
 //
 
 import SwiftUI
 
-struct RublesPerKilogramLogo: View {
+struct RublesPerPieceLogo: View {
     let width: CGFloat = 22
     let height : CGFloat = 20
     let rubleWidth: CGFloat = 6
@@ -16,7 +16,6 @@ struct RublesPerKilogramLogo: View {
     let killogramsrubleHeight : CGFloat = 6
     
     var body: some View {
-        
         
         ZStack {
             Image(systemName: "minus.forwardslash.plus")
@@ -35,10 +34,11 @@ struct RublesPerKilogramLogo: View {
                 }
                 HStack {
                     Spacer()
-                    Text("кг")
-                        .font(.system(size: 8, design: .rounded))
+                    Text("шт")
+                        .font(.system(size: 7, design: .rounded))
                         .fontWeight(.heavy)
                         .background(Color.white)
+                        .padding(.leading, 2)
                     
                 }
             }
@@ -50,5 +50,5 @@ struct RublesPerKilogramLogo: View {
 }
 
 #Preview {
-    RublesPerKilogramLogo()
+    RublesPerPieceLogo()
 }

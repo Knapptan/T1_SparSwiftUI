@@ -21,27 +21,27 @@ struct PiecesKilogramsToggle: View {
 }
 
 struct CustomStyle: ToggleStyle {
-    let width: CGFloat = 189
-    let minWidth: CGFloat = 158
+    
+    let minWidth: CGFloat = 160
+    let maxWidth: CGFloat = 191
     let height: CGFloat = 28
-    let widthButton: CGFloat = 92.5
-    let minWidthButton: CGFloat = 77
-    let heightButton : CGFloat = 24
     let cornerRadius: CGFloat = 8
+    let padding: CGFloat = 4
     
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
             configuration.label
             
             ZStack(alignment: configuration.isOn ? .trailing : .leading) {
+                
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(minWidth: minWidth, maxWidth: width, maxHeight: height)
+                    .frame(minWidth: minWidth, maxWidth: maxWidth, maxHeight: height)
                     .foregroundColor(.gray.opacity(0.2))
                 
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(minWidth: minWidthButton, maxWidth: widthButton, maxHeight: heightButton)
-                    .padding(2)
+                    .frame(minWidth: (minWidth - padding * 2) / 2, maxWidth: (maxWidth - padding * 2) / 2, maxHeight: height - padding)
                     .foregroundColor(.white)
+                    .padding(padding)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
                     .onTapGesture {
                         withAnimation {
@@ -65,12 +65,12 @@ struct CustomStyle: ToggleStyle {
                     
                     Spacer()
                 }
-                .frame(minWidth: minWidth, maxWidth: width, minHeight: height)
+                .frame(minWidth: minWidth, maxWidth: maxWidth, minHeight: height)
             }
         }
     }
 }
-//
-//#Preview {
-//    PiecesKilogramsToggle(isKgSelected: true)
-//}
+
+#Preview {
+    PiecesKilogramsToggle(isKgSelected: .constant(true))
+}
