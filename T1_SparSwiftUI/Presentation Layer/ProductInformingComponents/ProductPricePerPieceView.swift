@@ -15,7 +15,7 @@ struct ProductPricePerPieceView: View {
     let width: CGFloat = 90
     let maxWidth: CGFloat = 160
     let height : CGFloat = 36
-    let widthText: CGFloat = 36
+    let widthText: CGFloat = 80
     let heightText : CGFloat = 22
     let heightKopecks : CGFloat = 20
     let heightSecondText : CGFloat = 14
@@ -30,34 +30,30 @@ struct ProductPricePerPieceView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 1) {
-            HStack (spacing: 1){
+            HStack (spacing: 1) {
                 Text(formattedRubls(discountedPrice))
                     .fontWeight(.bold)
                     .font(.system(size: 18, design: .rounded))
-                    .frame(maxHeight: heightText, alignment: .leading)
-                    .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(1)
+                    .layoutPriority(1)
                 Text(formattedKopecks(discountedPrice))
                     .font(.system(size: 14, design: .rounded))
                     .fontWeight(.bold)
-                    .frame(maxHeight: heightText, alignment: .topLeading)
-                    .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(1)
                 RublesPerPieceLogo()
                 Spacer()
             }
-            .frame(minWidth: width, maxWidth: .infinity, maxHeight: heightText)
+            .frame(minWidth: width, maxWidth: maxWidth, maxHeight: heightText)
             if discount != nil {
                 Text(formattedRubls(price))
                     .font(.caption2)
-                    .frame(width: widthText,height: heightSecondText, alignment: .leading)
+                    .frame(width: widthText, height: heightSecondText, alignment: .leading)
                     .lineLimit(1)
                     .foregroundColor(Color.secondary)
                     .strikethrough(true)
             }
         }
-        .frame(width: width,height: height)
-        .fixedSize(horizontal: true, vertical: false)
+        .frame(minWidth: width, maxWidth: maxWidth, maxHeight: height)
     }
     
     func formattedRubls(_ price: Double) -> String {

@@ -19,16 +19,15 @@ struct PurchaseModuleView: View {
     let cornerRadius: CGFloat = 40
     
     var product: Product
-
+    
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(spacing: 0) {
+            if product.isSoldByQuantity && product.isSoldByWeight {
+                PiecesKilogramsToggle(isKgSelected: $isKgSelected)
+                    .frame(minWidth: minWidth, maxWidth: maxWidth)
+                    .frame(height: height / 2)
+            }
             if isInCart {
-                if product.isSoldByQuantity && product.isSoldByWeight {
-                    PiecesKilogramsToggle(isKgSelected: $isKgSelected)
-                        .frame(minWidth: minWidth, maxWidth: maxWidth)
-                        .frame(height: height / 2)
-                }
-                
                 if isKgSelected {
                     KilogramsSetter(kilograms: $kilograms, onZero: {
                         resetToInitialState()
@@ -43,13 +42,17 @@ struct PurchaseModuleView: View {
                     .frame(height: height / 2)
                 }
             } else {
-                Spacer()
-                HStack(alignment: .bottom) {
-                    ProductPricePerKilogramView(price: 2200, discount: 3)
-                    Spacer()
+                HStack(spacing: 0) {
+                    if isKgSelected {
+                        ProductPricePerKilogramView(price: 2200, discount: 3)
+                    } else {
+                        ProductPricePerPieceView(price: 2200, discount: 3)
+                    }
+                    
                     ShoppingCartButton(isShoppingCart: $isInCart)
                 }
-                .frame(height: 50)
+                .frame(minWidth: minWidth, maxWidth: maxWidth)
+                .frame(height: height / 2)
             }
         }
         .frame(minWidth: minWidth, maxWidth: maxWidth)
