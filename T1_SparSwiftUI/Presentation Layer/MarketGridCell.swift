@@ -14,9 +14,6 @@ struct MarketGridCell: View {
     
     let textHeight: CGFloat = 44
     
-    let buttonWidh: CGFloat = 158
-    let setterWidh: CGFloat = 160
-    
     var body: some View {
         VStack ( spacing: 0){
             ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.new, showDiscountLabel: true)

@@ -26,6 +26,7 @@ struct PurchaseModuleView: View {
                 PiecesKilogramsToggle(isKgSelected: $isKgSelected)
                     .frame(minWidth: minWidth, maxWidth: maxWidth)
                     .frame(height: height / 2)
+                    .layoutPriority(1)
             }
             if isInCart {
                 if isKgSelected {
