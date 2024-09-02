@@ -36,6 +36,7 @@
 		9296F5112C764E3C00D024DD /* PurchaseModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */; };
 		9296F5132C7FB0C200D024DD /* RublesPerPieceLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5122C7FB0C200D024DD /* RublesPerPieceLogo.swift */; };
 		9296F5152C7FB2C700D024DD /* ProductPricePerPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5142C7FB2C700D024DD /* ProductPricePerPieceView.swift */; };
+		9296F5172C85180100D024DD /* Exaple.json in Resources */ = {isa = PBXBuildFile; fileRef = 9296F5162C85180100D024DD /* Exaple.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModuleView.swift; sourceTree = "<group>"; };
 		9296F5122C7FB0C200D024DD /* RublesPerPieceLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublesPerPieceLogo.swift; sourceTree = "<group>"; };
 		9296F5142C7FB2C700D024DD /* ProductPricePerPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPricePerPieceView.swift; sourceTree = "<group>"; };
+		9296F5162C85180100D024DD /* Exaple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exaple.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				924B23742C6FAE8B006B94DA /* Presentation Layer */,
 				924B23682C6FAE1C006B94DA /* Item.swift */,
 				924B236A2C6FAE1E006B94DA /* Assets.xcassets */,
+				9296F5162C85180100D024DD /* Exaple.json */,
 				924B236C2C6FAE1E006B94DA /* Preview Content */,
 			);
 			path = T1_SparSwiftUI;
@@ -258,6 +261,7 @@
 			files = (
 				924B236E2C6FAE1E006B94DA /* Preview Assets.xcassets in Resources */,
 				924B236B2C6FAE1E006B94DA /* Assets.xcassets in Resources */,
+				9296F5172C85180100D024DD /* Exaple.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
