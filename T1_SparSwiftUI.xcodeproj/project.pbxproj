@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9200E8922CEB1F6D00C0246B /* localJsonPars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200E8912CEB1F3700C0246B /* localJsonPars.swift */; };
 		92432A9C2C73126900589167 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92432A9B2C73126900589167 /* ProductViewModel.swift */; };
 		92432AA02C73628900589167 /* ShoppingCartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92432A9F2C73628900589167 /* ShoppingCartButton.swift */; };
 		92432AA22C73734300589167 /* ProductPricePerKilogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92432AA12C73734300589167 /* ProductPricePerKilogramView.swift */; };
@@ -36,10 +37,11 @@
 		9296F5112C764E3C00D024DD /* PurchaseModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */; };
 		9296F5132C7FB0C200D024DD /* RublesPerPieceLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5122C7FB0C200D024DD /* RublesPerPieceLogo.swift */; };
 		9296F5152C7FB2C700D024DD /* ProductPricePerPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9296F5142C7FB2C700D024DD /* ProductPricePerPieceView.swift */; };
-		9296F5172C85180100D024DD /* Exaple.json in Resources */ = {isa = PBXBuildFile; fileRef = 9296F5162C85180100D024DD /* Exaple.json */; };
+		9296F5172C85180100D024DD /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 9296F5162C85180100D024DD /* example.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9200E8912CEB1F3700C0246B /* localJsonPars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localJsonPars.swift; sourceTree = "<group>"; };
 		92432A9B2C73126900589167 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		92432A9F2C73628900589167 /* ShoppingCartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartButton.swift; sourceTree = "<group>"; };
 		92432AA12C73734300589167 /* ProductPricePerKilogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPricePerKilogramView.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		9296F5102C764E3C00D024DD /* PurchaseModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModuleView.swift; sourceTree = "<group>"; };
 		9296F5122C7FB0C200D024DD /* RublesPerPieceLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublesPerPieceLogo.swift; sourceTree = "<group>"; };
 		9296F5142C7FB2C700D024DD /* ProductPricePerPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPricePerPieceView.swift; sourceTree = "<group>"; };
-		9296F5162C85180100D024DD /* Exaple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exaple.json; sourceTree = "<group>"; };
+		9296F5162C85180100D024DD /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		92432A962C730D6300589167 /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				9200E8912CEB1F3700C0246B /* localJsonPars.swift */,
 			);
 			path = "Data Layer";
 			sourceTree = "<group>";
@@ -159,7 +162,7 @@
 				924B23742C6FAE8B006B94DA /* Presentation Layer */,
 				924B23682C6FAE1C006B94DA /* Item.swift */,
 				924B236A2C6FAE1E006B94DA /* Assets.xcassets */,
-				9296F5162C85180100D024DD /* Exaple.json */,
+				9296F5162C85180100D024DD /* example.json */,
 				924B236C2C6FAE1E006B94DA /* Preview Content */,
 			);
 			path = T1_SparSwiftUI;
@@ -261,7 +264,7 @@
 			files = (
 				924B236E2C6FAE1E006B94DA /* Preview Assets.xcassets in Resources */,
 				924B236B2C6FAE1E006B94DA /* Assets.xcassets in Resources */,
-				9296F5172C85180100D024DD /* Exaple.json in Resources */,
+				9296F5172C85180100D024DD /* example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +296,7 @@
 				9296F5132C7FB0C200D024DD /* RublesPerPieceLogo.swift in Sources */,
 				924B23862C6FB02C006B94DA /* ImagePriceHitLabel.swift in Sources */,
 				92432AA22C73734300589167 /* ProductPricePerKilogramView.swift in Sources */,
+				9200E8922CEB1F6D00C0246B /* localJsonPars.swift in Sources */,
 				924B23912C6FBF03006B94DA /* ProductCellRating.swift in Sources */,
 				924B238B2C6FB02C006B94DA /* ProductNameView.swift in Sources */,
 				924B23952C70016F006B94DA /* ImageGridOverlayView.swift in Sources */,

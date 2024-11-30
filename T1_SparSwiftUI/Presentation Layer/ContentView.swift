@@ -9,11 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isGridView: Bool = true
-    let products = (1...20).map {_ in Product.sampleProduct()}
+    let products: [Product]
+    let productViewModels: [ProductViewModel]
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+
+    init() {
+        self.products = ProductViewModel.loadProducts() // Загружаем продукты
+        self.productViewModels = self.products.map { ProductViewModel(product: $0) } // Создаем вью-модели
+    }
     
     var body: some View {
         NavigationView {
@@ -22,8 +28,9 @@ struct ContentView: View {
                 if isGridView {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 8) {
-                            ForEach(products) { product in
-                                MarketGridCell(product: product)
+                            // Используем productViewModels вместо products
+                            ForEach(productViewModels, id: \.id) { viewModel in
+                                MarketGridCell(viewModel: viewModel) // Передаем вью-модель
                             }
                         }
                     }
@@ -31,8 +38,9 @@ struct ContentView: View {
                 } else {
                     ScrollView {
                         LazyVStack {
-                            ForEach(products) { product in
-                                MarketListCell(product: product)
+                            // Используем productViewModels вместо products
+                            ForEach(productViewModels, id: \.id) { viewModel in
+                                MarketListCell(viewModel: viewModel) // Передаем вью-модель
                             }
                         }
                     }

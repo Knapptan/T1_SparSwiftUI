@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PurchaseModuleView: View {
+    @ObservedObject var viewModel: ProductViewModel
+    
     @State private var isInCart = false
     @State private var isKgSelected = true
     @State private var pieces = 1
@@ -18,11 +20,9 @@ struct PurchaseModuleView: View {
     let height: CGFloat = 70
     let cornerRadius: CGFloat = 40
     
-    var product: Product
-    
     var body: some View {
         VStack(spacing: 0) {
-            if product.isSoldByQuantity && product.isSoldByWeight {
+            if viewModel.product.isSoldByQuantity && viewModel.product.isSoldByWeight {
                 PiecesKilogramsToggle(isKgSelected: $isKgSelected)
                     .frame(minWidth: minWidth, maxWidth: maxWidth)
                     .frame(height: height / 2)
@@ -30,7 +30,7 @@ struct PurchaseModuleView: View {
             }
             if isInCart {
                 if isKgSelected {
-                    KilogramsSetter(kilograms: $kilograms, onZero: {
+                    KilogramsSetter(kilograms: $kilograms, pricePerKilogram: viewModel.product.pricePerKilogram ?? 0,onZero: {
                         resetToInitialState()
                     })
                     .frame(minWidth: minWidth, maxWidth: maxWidth)
@@ -45,9 +45,9 @@ struct PurchaseModuleView: View {
             } else {
                 HStack(spacing: 0) {
                     if isKgSelected {
-                        ProductPricePerKilogramView(price: 2200, discount: 3)
+                        ProductPricePerKilogramView(price: viewModel.product.pricePerKilogram ?? 0, discount: viewModel.product.discount ?? 0)
                     } else {
-                        ProductPricePerPieceView(price: 2200, discount: 3)
+                        ProductPricePerPieceView(price: viewModel.product.price, discount: viewModel.product.discount ?? 0)
                     }
                     
                     ShoppingCartButton(isShoppingCart: $isInCart)
@@ -66,8 +66,4 @@ struct PurchaseModuleView: View {
         pieces = 1
         kilograms = 0.1
     }
-}
-
-#Preview {
-    PurchaseModuleView(product: Product.sampleProduct())
 }

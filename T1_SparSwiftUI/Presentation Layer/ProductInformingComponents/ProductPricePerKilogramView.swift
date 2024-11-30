@@ -13,7 +13,7 @@ struct ProductPricePerKilogramView: View {
     var discount: Double?
     
     let width: CGFloat = 90
-    let maxWidth: CGFloat = 160
+    let maxWidth: CGFloat = 140
     let height : CGFloat = 36
     let widthText: CGFloat = 80
     let heightText : CGFloat = 22

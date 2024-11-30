@@ -24,7 +24,7 @@ struct ProductNameView: View {
                 .frame(width: widthText,height: heightText, alignment: .leading)
                 .lineLimit(2)
                 .minimumScaleFactor(0.5)
-            Text(countryOfOrigin.rawValue)
+            Text(countryOfOrigin.displayName)
                 .font(.caption2)
                 .frame(width: widthText,height: heightSecondText, alignment: .leading)
                 .lineLimit(1)

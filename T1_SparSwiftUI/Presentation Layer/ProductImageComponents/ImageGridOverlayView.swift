@@ -55,7 +55,9 @@ struct ImageGridOverlayView: View {
                 }
                 Spacer()
                 HStack (alignment: .bottom){
-                    ProductCellRating(rating: rating)
+                    if rating != nil{
+                        ProductCellRating(rating: rating)
+                    }
                     Spacer()
                     if showDiscountLabel {
                         ImageDiscount25PercentLabel()

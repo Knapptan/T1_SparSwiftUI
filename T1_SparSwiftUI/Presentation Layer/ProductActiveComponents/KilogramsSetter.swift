@@ -10,9 +10,10 @@ import SwiftUI
 
 struct KilogramsSetter: View {
     @Binding var kilograms: Double
+    var pricePerKilogram: Double 
     var onZero: () -> Void
-    @State var rubls = 0
-    @State var kopecks = 0
+    @State private var rubls = 0
+    @State private var kopecks = 0
 
     let minWidth: CGFloat = 160
     let maxWidth: CGFloat = 189
@@ -32,6 +33,7 @@ struct KilogramsSetter: View {
                 if kilograms == 0.0 {
                     onZero()
                 }
+                updatePrice()
             }) {
                 Image(systemName: "minus")
                     .frame(width: widthButton, height: heightButton)
@@ -66,6 +68,7 @@ struct KilogramsSetter: View {
             
             Button(action: {
                 kilograms += 0.1
+                updatePrice()
             }) {
                 Image(systemName: "plus")
                     .frame(width: widthButton, height: heightButton)
@@ -78,13 +81,22 @@ struct KilogramsSetter: View {
         .frame(height: height)
         .background(Color.primary001)
         .cornerRadius(cornerRadius)
+        .onAppear {
+            updatePrice()
+        }
+    }
+    
+    func updatePrice() {
+        let totalPrice = kilograms * pricePerKilogram
+        rubls = Int(totalPrice)
+        kopecks = Int((totalPrice - Double(rubls)) * 100)
     }
     
     func formatKilograms(_ kilograms: Double) -> String {
-            return String(format: "%.1f", kilograms)
+        return String(format: "%.1f", kilograms)
     }
 }
 
 #Preview {
-    KilogramsSetter(kilograms: .constant(0.5), onZero: {})
+    KilogramsSetter(kilograms: .constant(0.5), pricePerKilogram: 2200, onZero: {})
 }

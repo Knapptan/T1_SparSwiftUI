@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct MarketListCell: View {
-    var product: Product // заменить на вью модель 
-    
+    var viewModel: ProductViewModel
     var body: some View {
         let width: CGFloat = 375
         let height : CGFloat = 176
         
         VStack {
             HStack (spacing: 8){
-                ImageListOverlayView(imageName: product.imageName, promotion: ProductPromotionType.cardPrice, showDiscountLabel: true)
+                ImageListOverlayView(imageName: viewModel.product.imageName, promotion: viewModel.promotionType, showDiscountLabel: viewModel.showDiscountLabel)
                 VStack (alignment: .leading, spacing: 0){
                     HStack (spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
-                            ProductLineRating(rating: product.rating)
-                            ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
+                            ProductLineRating(rating: viewModel.rating)
+                            ProductNameView(name: viewModel.product.name, countryOfOrigin: viewModel.countryType)
                         }
                         ListLikeCell()
                             
                     }
                     VStack(alignment: .leading){
-                        PurchaseModuleView(product: product)}
+                        PurchaseModuleView(viewModel: viewModel)}
                     .frame(minWidth: 199, maxHeight: 64)
                 }
             }
@@ -38,5 +37,5 @@ struct MarketListCell: View {
 }
 
 #Preview {
-    MarketListCell(product: Product.sampleProduct())
+    MarketListCell(viewModel: ProductViewModel(product: Product.sampleProduct()))
 }

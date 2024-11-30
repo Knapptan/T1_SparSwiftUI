@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct MarketGridCell: View {
-    var product: Product // заменить на вью модель
+    var viewModel: ProductViewModel
     let width: CGFloat = 170
     let height : CGFloat = 280
-    
     let textHeight: CGFloat = 44
     
     var body: some View {
         VStack ( spacing: 0){
-            ImageGridOverlayView(imageName: product.imageName, promotion: ProductPromotionType.new, showDiscountLabel: true)
-            ProductNameView(name: product.name, countryOfOrigin: product.countryOfOrigin)
+            ImageGridOverlayView(imageName: viewModel.product.imageName ?? "", promotion: viewModel.promotionType, showDiscountLabel: viewModel.showDiscountLabel, rating: viewModel.rating)
+            ProductNameView(name: viewModel.product.name, countryOfOrigin: viewModel.countryType)
                 .frame(height: textHeight)
-            PurchaseModuleView(product: product)
+            PurchaseModuleView(viewModel: viewModel)
                 .padding(.horizontal, 5)
                 .padding(.bottom, 5)
         }
@@ -39,5 +38,5 @@ struct MarketGridCell: View {
 
 
 #Preview {
-    MarketGridCell(product: Product.sampleProduct())
+    MarketGridCell(viewModel: ProductViewModel(product: Product.sampleProduct()))
 }

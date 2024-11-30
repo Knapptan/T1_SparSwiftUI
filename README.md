@@ -19,3 +19,6 @@ https://www.figma.com/design/1VrYJ62cSC7yFJWsuUD3xa/Spar-Intern-Task?node-id=0-1
 Для реализации тестового задания используем фреймворк SwiftUI. 
 Архитектурный паттерн MVVM
 
+Далее скрины итогового варианта, при строгих размерах, без динамической верстки.
+![AppScreen1](misc/images/AppScreen1.png)
+![AppScreen2](misc/images/AppScreen2.png)
